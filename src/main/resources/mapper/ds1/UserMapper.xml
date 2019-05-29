@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.btm.maturedemo2.model.ds1.User">
+    <resultMap id="BaseReslutMap" type="com.btm.maturedemo2.model.ds1.User">
+        <constructor>
+            <idArg column="ID" jdbcType="BIGINTER" javaType="java.lang.Long"/>
+            <arg column="NAME" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="AGE" jdbcType="INT" javaType="java.lang.Integer"/>
+            <arg column="EMAIL" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="CREATE_DATE" jdbcType="TIMESTAMP" javaType="java.sql.Timestamp"/>
+        </constructor>
+    </resultMap>
+    
+</mapper>
