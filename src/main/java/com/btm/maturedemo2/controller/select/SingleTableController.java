@@ -12,6 +12,7 @@ import java.util.List;
 
 /**
  * 使用单表查询
+ * 更多QueryWrapper条件构造器（包装器）的使用请参考：https://mp.baomidou.com/guide/wrapper.html
  *
  * @Author: BigTailMonkey
  * @Date: 2019/5/29 17:15
@@ -67,6 +68,27 @@ public class SingleTableController {
     }
 
     /**
+     * 时间条件查询
+     * <p>
+     * 单条件
+     * 条件形式：param1=value1
+     * 多结果
+     *
+     * @return
+     */
+    @GetMapping("dataConditional")
+    public String dataConditional(){
+        //声明一个查询条件包装器
+        QueryWrapper<User> userQueryWrapper = new QueryWrapper<>();
+        //添加查询条件：create_date=str_to_date('2019-05-01 19:29:35','%Y-%m-%d %H:%i:%s')
+        userQueryWrapper.apply("create_date = str_to_date({0},'%Y-%m-%d %H:%i:%s')","2019-05-01 19:29:35");
+        //应用条件包装器查询单条数据
+        List<User> user = userMapper.selectList(userQueryWrapper);
+        return null != user ? user.toString() : "No result.";
+
+    }
+
+    /**
      * 多条件
      * 条件形式：param1=value1 and param2=value2
      * 多结果
@@ -116,18 +138,44 @@ public class SingleTableController {
      * @return
      */
     @GetMapping("multiResultMultiConditionalAndNestedOr")
-    public String multiResultMultiConditionalAndNestedOr(){
+    public String multiResultMultiConditionalAndNestedOr() {
         //声明一个查询条件包装器
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
-        //添加查询条件：name='btm'
+        //添加查询条件：age='18'
         queryWrapper.eq("age", "18")
                 //嵌套 and 条件关联关键字
-                .and(i->i.eq("name","btm")
-                //添加 or 条件关联关键字
-                .or()
-                //添加查询条件：name='Jone'
-                .eq("name", "Jone"));
+                .and(
+                        //添加查询条件：name='btm'
+                        i -> i.eq("name", "btm")
+                                //添加 or 条件关联关键字
+                                .or()
+                                //添加查询条件：name='Jone'
+                                .eq("name", "Jone"));
         List<User> list = userMapper.selectList(queryWrapper);
         return null != list ? list.toString() : "No result.";
     }
+
+    /**
+     * 多条件
+     * 条件形式： param1=value1 or (param2=value2 and param3=value3)
+     * 多结果
+     *
+     * @return
+     */
+    @GetMapping("multiResultMultiConditionalOrNestedAnd")
+    public String multiResultMultiConditionalOrNestedAnd() {
+        //声明一个查询条件包装器
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        //添加查询条件：age>'20'
+        queryWrapper.gt("age", "20")
+                //嵌套 and 条件关联关键字
+                .or(
+                        //添加查询条件：name='btm'
+                        i -> i.eq("name", "btm")
+                                //添加查询条件：age='19'
+                                .eq("age", "19"));
+        List<User> list = userMapper.selectList(queryWrapper);
+        return null != list ? list.toString() : "No result.";
+    }
+
 }
