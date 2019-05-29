@@ -1,0 +1,41 @@
+#输出日志级别
+logging:
+  level:
+    root: info
+
+#druid configuration
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      ds1:
+        url:
+        username:
+        password:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+      ds2:
+        url:
+        username:
+        password:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+
+#mybatis-plus configuration
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
+      field-strategy: not_empty
+      #驼峰下划线转换
+      column-underline: true
+      table-underline: true
+      #逻辑删除配置
+      logic-delete-value: 0
+      logic-not-delete-value: 1
+      db-type: mysql
+    refresh: false
+  configuration:
+    #开始驼峰命名
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  type-aliases-package: com.btm.maturedemo2.model
