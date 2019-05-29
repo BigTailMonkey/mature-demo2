@@ -1,9 +1,9 @@
-#Êä³öÈÕÖ¾¼¶±ğ
+#è¾“å‡ºæ—¥å¿—çº§åˆ«
 logging:
   level:
     root: info
 
-#ÒıÈëË½ÓĞÅäÖÃÎÄ¼şÅäÖÃdruid£¬Î´ÉÏ´«Git£¬Ê¹ÓÃÊ±ÇëÌæ»»
+#å¼•å…¥ç§æœ‰é…ç½®æ–‡ä»¶é…ç½®druidï¼Œæœªä¸Šä¼ Gitï¼Œä½¿ç”¨æ—¶è¯·æ›¿æ¢
 spring:
   profiles:
     active: private
@@ -29,16 +29,16 @@ mybatis-plus:
     db-config:
       id-type: auto
       field-strategy: not_empty
-      #ÍÕ·åÏÂ»®Ïß×ª»»
+      #é©¼å³°ä¸‹åˆ’çº¿è½¬æ¢
       column-underline: true
       table-underline: true
-      #Âß¼­É¾³ıÅäÖÃ
+      #é€»è¾‘åˆ é™¤é…ç½®
       logic-delete-value: 0
       logic-not-delete-value: 1
       db-type: mysql
     refresh: false
   configuration:
-    #¿ªÊ¼ÍÕ·åÃüÃû
+    #å¼€å§‹é©¼å³°å‘½å
     map-underscore-to-camel-case: true
     cache-enabled: false
   mapper-locations: classpath:/mapper/*Mapper.xml
