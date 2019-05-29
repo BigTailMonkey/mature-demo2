@@ -3,21 +3,25 @@ logging:
   level:
     root: info
 
-#druid configuration
+#引入私有配置文件配置druid，未上传Git，使用时请替换
 spring:
-  datasource:
-    type: com.alibaba.druid.pool.DruidDataSource
-    druid:
-      ds1:
-        url:
-        username:
-        password:
-        driver-class-name: com.mysql.cj.jdbc.Driver
-      ds2:
-        url:
-        username:
-        password:
-        driver-class-name: com.mysql.cj.jdbc.Driver
+  profiles:
+    active: private
+#druid configuration
+#spring:
+#  datasource:
+#    type: com.alibaba.druid.pool.DruidDataSource
+#    druid:
+#      ds1:
+#        url:
+#        username:
+#        password:
+#        driver-class-name: com.mysql.cj.jdbc.Driver
+#      ds2:
+#        url:
+#        username:
+#        password:
+#        driver-class-name: com.mysql.cj.jdbc.Driver
 
 #mybatis-plus configuration
 mybatis-plus:

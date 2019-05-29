@@ -22,6 +22,10 @@ public class demoController {
     @Autowired
     private com.btm.maturedemo2.mapper.ds2.UserMapper userMapperds2;
 
+    /**
+     * 测试简单基础的多数据源
+     * 从两个数据源的user表中分别查出所有的内容并打印在控制台
+     */
     @GetMapping("testSimpleBasicMultiDataSource")
     public void testSelect() {
         System.out.println("使用数据源 ds1 读取数据");
