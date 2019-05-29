@@ -5,6 +5,7 @@ Spring boot+druid+mybatis plus实现对数据源自动切换
 --
 本成熟样例，已基于JDK1.8环境运行成功。  
 所有配置内容均在**com.btm.maturedemo2.configuration**包路径下。  
+数据库建表语句：classpath:static/SQL.sql
 _为方便示例，工程直接在Controller层调用了Mapper，实际开发中应避免。_   
 建议按照分支顺序，从简到繁的进行查看、阅读
 
