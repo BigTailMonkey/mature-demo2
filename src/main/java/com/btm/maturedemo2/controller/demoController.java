@@ -22,7 +22,7 @@ public class demoController {
     @Autowired
     private com.btm.maturedemo2.mapper.ds2.UserMapper userMapperds2;
 
-    @GetMapping("test")
+    @GetMapping("testSimpleBasicMultiDataSource")
     public void testSelect() {
         System.out.println("使用数据源 ds1 读取数据");
         List<com.btm.maturedemo2.model.ds1.User> userListDs1 = userMapperds1.selectList(null);
