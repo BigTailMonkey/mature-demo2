@@ -2,6 +2,7 @@ package com.btm.maturedemo2.model.ds1;
 
 import lombok.Data;
 
+import java.sql.Date;
 import java.sql.Timestamp;
 
 /**
@@ -17,4 +18,6 @@ public class User {
     private String email;
     //使用Timestamp类型，返回结果中的时间可精确到0.1秒精度
     private Timestamp createDate;
+    //使用Date类型，返回结果中的时间可精确到1天精度
+//    private Date createDate;
 }

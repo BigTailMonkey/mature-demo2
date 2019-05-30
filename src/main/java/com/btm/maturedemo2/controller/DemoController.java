@@ -14,7 +14,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("test")
-public class demoController {
+public class DemoController {
 
     @Autowired
     private com.btm.maturedemo2.mapper.ds1.UserMapper userMapperds1;
