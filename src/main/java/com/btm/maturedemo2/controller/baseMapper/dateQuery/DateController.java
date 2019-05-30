@@ -1,4 +1,4 @@
-package com.btm.maturedemo2.controller.dataQuery;
+package com.btm.maturedemo2.controller.baseMapper.dateQuery;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.btm.maturedemo2.mapper.ds1.UserMapper;
