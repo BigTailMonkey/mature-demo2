@@ -27,7 +27,10 @@ public class SingleTableInsertController {
     @GetMapping("insertBatch")
     public String insertBatch(){
         List<User> userList = new ArrayList<>();
-        User user = new User(11l,"Tom",16,"test3@btm.com",new Date());
-        return "Insert successfully"+ds1UserService.saveBatch(userList);
+        User user1 = new User(11l,"Tom",16,"test3@btm.com",new Date());
+        User user2 = new User(12l,"Jetty",17,"test4@btm.com",new Date());
+        userList.add(user1);
+        userList.add(user2);
+        return "Insert result : "+ds1UserService.saveBatch(userList);
     }
 }
