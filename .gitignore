@@ -2,6 +2,7 @@ HELP.md
 /target/
 !.mvn/wrapper/maven-wrapper.jar
 application-private.yml
+src/main/java/com/btm/maturedemo2/codeGenerate/configuration/
 ### STS ###
 .apt_generated
 .classpath
