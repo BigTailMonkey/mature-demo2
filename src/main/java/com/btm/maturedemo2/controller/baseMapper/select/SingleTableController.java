@@ -1,4 +1,4 @@
-package com.btm.maturedemo2.controller.select;
+package com.btm.maturedemo2.controller.baseMapper.select;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.btm.maturedemo2.mapper.ds1.UserMapper;
@@ -19,7 +19,7 @@ import java.util.List;
  * @Version: 1.0
  */
 
-@RequestMapping("singleTable")
+@RequestMapping("singleTableSelect")
 @RestController
 public class SingleTableController {
 
