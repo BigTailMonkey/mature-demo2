@@ -46,5 +46,5 @@ mybatis-plus:
     #开始驼峰命名
     map-underscore-to-camel-case: true
     cache-enabled: false
-  mapper-locations: classpath:/mapper/*Mapper.xml
+  mapper-locations: classpath:/mapper/*/*Mapper.xml
   type-aliases-package: com.btm.maturedemo2.model
