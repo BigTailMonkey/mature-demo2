@@ -19,8 +19,8 @@ import java.util.List;
  * @Version: 1.0
  */
 
-@RequestMapping("singleTableSelect")
-@RestController
+@RequestMapping("baseMapper/singleTableSelect")
+@RestController("singleMapperSelect")
 public class SingleTableController {
 
     @Autowired

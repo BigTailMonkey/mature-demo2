@@ -19,8 +19,8 @@ import java.util.Date;
  * @Version: 1.0
  */
 
-@RestController("singleInsert")
-@RequestMapping("singleTableInsert")
+@RequestMapping("baseMapper/singleTableInsert")
+@RestController("singleMapperInsert")
 public class SingleTableController {
 
     @Autowired
@@ -33,10 +33,10 @@ public class SingleTableController {
     @GetMapping("insertOne")
     public String insertOne(){
         User user = new User();
-        user.setId(9l);
-        user.setName("Btm");
-        user.setAge(22);
-        user.setEmail("test1@btm.com");
+        user.setId(10l);
+        user.setName("Smarts");
+        user.setAge(15);
+        user.setEmail("test2@btm.com");
         user.setCreateDate(new Timestamp(new Date().getTime()));
         return "Insert successful ："+userMapper.insert(user);
     }
